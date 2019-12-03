@@ -5,12 +5,29 @@ $(document).ready(function() {
     var key = $(this).data("key");
     var value = $(`#${key}`).val();
 
-    var currentHour = moment().hours(); /*** 9 */
+    var currentHour = moment(moment().format("hh:mm A"), "hh:mm A").hours();
+    var amPm = moment()
+      .format("hh:mm A")
+      .slice(-2);
+    console.log(amPm);
     //loop through your hours
-    var blockHour = something;
-    if (blockhour < currentHour);
-    // style it
-    if (blockhour === currentHour);
+    var hours = $(".time");
+
+    for (var i = 0; i < hours.length; i++) {
+      var hourHtml = hours[i];
+      var blockHour = $(hourHtml).data("hour");
+      if (blockHour < currentHour) {
+        console.log("red");
+      }
+      // style it
+      if (blockHour === currentHour) {
+        console.log("blue");
+      }
+      if (blockHour > currentHour) {
+        console.log("green");
+      }
+    }
+
     // syle it
 
     // save it local storage
